@@ -1,8 +1,10 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <readdata.h>
+#include <QQmlContext>
 #include <wiringPi.h>
 #include <QDebug>
+#include <QQuickView>
 
 int main(int argc, char *argv[])
 {
@@ -24,15 +26,25 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
+    ReadData rd;
+
+
     QQmlApplicationEngine engine;
+    QQmlContext *ctxt = engine.rootContext();
+    ctxt->setContextProperty("readData", &rd);
+    //QQuickView view;
+    //QQmlContext *ctxt=engine.rootContext();
+    //view.engine()->rootContext()->setContextProperty("readData", &rd);
+    //view.setSource(QUrl::fromLocalFile("main.qml"));
+    //view.show();
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
 
-    ReadData rd;
     rd.GPIOSetUp();
     rd.SetPinMode(4,INPUT);
-    rd.ShowDigital();
+    rd.ShowData();
+
 
     return app.exec();
 }

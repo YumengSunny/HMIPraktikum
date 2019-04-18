@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.8.2, 2019-04-17T11:57:26. -->
+<!-- Written by QtCreator 4.8.2, 2019-04-18T23:34:10. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -283,7 +283,7 @@
        <value type="QString">E:/Qt/5.12.2/Boot2Qt/raspberrypi3/toolchain/sysroots/cortexa7hf-neon-vfpv4-poky-linux-gnueabi</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedTimes">
-       <value type="QDateTime">2019-04-17T11:56:29.593</value>
+       <value type="QDateTime">2019-04-18T23:33:19.982</value>
       </valuelist>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.IgnoreMissingFiles">false</value>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.Incremental">true</value>
@@ -343,8 +343,8 @@
     <value type="int" key="PE.EnvironmentAspect.Base">1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Termin2</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QdbLinuxRunConfiguration:D:/HMIPraktikum/Termin2/Termin2.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Termin22</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QdbLinuxRunConfiguration:D:/gitHub/HMIPraktikum/Termin2/Termin2.pro</value>
     <value type="bool" key="QdbRunCofig.UseAlternateRemoteExecutable">false</value>
     <value type="QString" key="QdbRunConfig.AlternateRemoteExecutable"></value>
     <value type="QString" key="QdbRunConfig.LocalExecutable">D:/HMIPraktikum/build-Termin2-Boot2Qt_5_12_2_Raspberry_Pi_3-Debug/Termin2</value>
@@ -597,19 +597,20 @@
     </valuelist>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.CustomExecutableRunConfiguration.Executable"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Custom Executable</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Termin2</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.CustomExecutableRunConfiguration</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/gitHub/HMIPraktikum/Termin2/Termin2.pro</value>
+    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">Termin2.pro</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
+    <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseMultiProcess">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default"></value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/HMIPraktikum/build-Termin2-Desktop_Qt_5_12_2_MinGW_64_bit-Debug</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

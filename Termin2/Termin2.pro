@@ -25,7 +25,9 @@ SOURCES += \
     softPwm.c \
     wiringPi.c \
     softTone.c \
-    piHiPri.c
+    piHiPri.c \
+    ../wiringPi/wiringPiI2C.c \
+    bme280.cpp
 
 RESOURCES += qml.qrc
 
@@ -44,4 +46,6 @@ HEADERS += \
     readdata.h\
     ../wiringpi/wiringpi.h \
     ../wiringpi/softPwm.h \
-    ../wiringpi/softTone.h
+    ../wiringpi/softTone.h \
+    ../wiringPi/wiringPiI2C.h \
+    bme280.h
