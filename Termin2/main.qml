@@ -2,6 +2,7 @@ import QtQuick 2.9
 import QtQuick.Window 2.2
 import QtQuick.VirtualKeyboard 2.2
 import QtQuick.Controls 2.0
+import QtGamepad 1.0
 
 Window {
     id: window
@@ -9,6 +10,12 @@ Window {
     width: 640
     height: 480
     title: qsTr("Hello World")
+
+    Gamepad {
+        id: gamepad
+        deviceId: GamepadManager.connectedGamepads.length > 0 ? GamepadManager.connectedGamepads[0] : -1
+        onDeviceIdChanged: GamepadManager.setCancelConfigureButton(deviceId, GamepadManager.ButtonStart);
+    }
 
     Rectangle{
         width:parent.width
@@ -24,8 +31,12 @@ Window {
                      +"Humidity: "+readData.humidity.toFixed(2)+",\n"
                      +"Pressure: "+readData.pressure.toFixed(2)+",\n"
                      +"Altitude: "+readData.altitude.toFixed(2)
+
             anchors.centerIn: rectangle1
+
          }
+
+
 
         Button{
             x:parent.width*0.4;
@@ -33,9 +44,27 @@ Window {
 
             onClicked: {
                 readData.isBlocked?readData.unblockSignal():readData.blockSignal();
-            }
-            text:readData.isBlocked?"Start":"Stop"
 
+            }
+
+
+            //text:readData.isBlocked?"Start":"Stop"
+
+            text:if(gamepad.buttonA){
+                     readData.isBlocked?readData.unblockSignal():readData.blockSignal();
+                     readData.isBlocked?"Start":"Stop";
+                  }else{
+                     readData.isBlocked?"Start":"Stop";
+                 }
+
+
+        }
+
+
+
+        Connections {
+            target: GamepadManager
+            onGamepadConnected: gamepad.deviceId = deviceId
         }
 
 

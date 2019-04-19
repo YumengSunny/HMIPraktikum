@@ -5,6 +5,7 @@
 #include <wiringPi.h>
 #include <QDebug>
 #include <QQuickView>
+#include <QtGamepad/QGamepad>
 
 int main(int argc, char *argv[])
 {
@@ -24,14 +25,17 @@ int main(int argc, char *argv[])
         QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     }
 
+    QCoreApplication::setApplicationName("GamepadSNES");
+    QCoreApplication::setOrganizationName("hda");
+    QCoreApplication::setOrganizationDomain("org.hda");
     QGuiApplication app(argc, argv);
 
     ReadData rd;
 
-
     QQmlApplicationEngine engine;
     QQmlContext *ctxt = engine.rootContext();
     ctxt->setContextProperty("readData", &rd);
+
     //QQuickView view;
     //QQmlContext *ctxt=engine.rootContext();
     //view.engine()->rootContext()->setContextProperty("readData", &rd);
