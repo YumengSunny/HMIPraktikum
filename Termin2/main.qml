@@ -18,19 +18,26 @@ Window {
     }
 
     Rectangle{
-        width:parent.width
         height: parent.height
         color: "lightblue"
         id: rectangle1
+        width: 1200
         Text {
-            id:data
+            id:dataSensor
+            width: 1013
+            height: 180
             font.family: "Helvetica"
             font.pointSize: 24
             text: "Light: " +readData.lightValue+ ",\n"
                      + "Temperature: "+readData.temperature.toFixed(2)+",\n"
                      +"Humidity: "+readData.humidity.toFixed(2)+",\n"
                      +"Pressure: "+readData.pressure.toFixed(2)+",\n"
-                     +"Altitude: "+readData.altitude.toFixed(2)
+                  +"Altitude: "+readData.altitude.toFixed(2)
+            anchors.verticalCenterOffset: -13
+                  anchors.horizontalCenterOffset: 79
+                  font.weight: Font.ExtraLight
+                  clip: false
+                  wrapMode: Text.WordWrap
 
             anchors.centerIn: rectangle1
 
@@ -103,3 +110,5 @@ Window {
         }
     }*/
 }
+
+
