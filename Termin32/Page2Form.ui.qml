@@ -6,8 +6,9 @@ Page {
     height: 400
 
     header: Label {
-        text: qsTr("Setting")
-        font.pixelSize: Qt.application.font.pixelSize * 2
+        font.pixelSize: 25
+        color: "purple"
+        anchors.horizontalCenter: parent.horizontalCenter
         padding: 10
     }
 }

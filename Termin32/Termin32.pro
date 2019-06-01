@@ -2,6 +2,10 @@ QT += quick widgets quickcontrols2
 
 CONFIG += c++11
 
+
+QMAKE_CFLAGS	+= -Wall -Wextra -Winline -pipe
+
+
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
 # depend on your compiler). Refer to the documentation for the
@@ -13,8 +17,37 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-SOURCES += \
-        main.cpp
+win32{
+    SOURCES += \
+            main.cpp \
+            readpseudo.cpp
+    HEADERS += \
+        readpseudo.h
+
+}else{
+    LIBS += -L../build-sensor-libraries-Yumeng-Debug/bme280 -lbme280
+    DEPENDPATH += . ../sensor-libraries/bme280
+    INCLUDEPATH += ../sensor-libraries/bme280
+    DEPENDPATH += . ../wiringpiqt/wiringPi ../wiringpiqt/devLib
+    INCLUDEPATH += ../wiringpiqt/wiringPi ../wiringpiqt/devLib
+    QMAKE_CFLAGS += -Wall -Wextra
+    LIBS += \
+        -L../build-wiringpiqt-Yumeng-Debug/wiringPi \
+        -L../build-wiringpiqt-Yumeng-Debug/devLib \
+        -lwiringPi \
+        -lwiringPiDev  \
+        -lm -lpthread -lrt -lcrypt
+    SOURCES += \
+                main.cpp \
+                readdata.cpp
+    HEADERS += \
+        readdata.h
+}
+
+#SOURCES += \
+#        main.cpp \
+#    readdata.cpp \
+#   readpseudo.cpp
 
 RESOURCES += qml.qrc
 
@@ -28,3 +61,14 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+HEADERS += \
+    datamodel.h \
+    basesensor.h
+
+SOURCES += \
+    datamodel.cpp
+
+DISTFILES +=
+
+
