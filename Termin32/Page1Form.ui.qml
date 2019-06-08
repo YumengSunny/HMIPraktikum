@@ -6,7 +6,6 @@ Page {
     height: 400
 
     header: Label {
-        text: qsTr("Live Data")
         font.pixelSize: Qt.application.font.pixelSize * 2
         padding: 10
     }

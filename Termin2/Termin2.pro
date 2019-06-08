@@ -1,10 +1,20 @@
 QT += quick
 CONFIG += c++11
 
-#DEPENDPATH += . ../wiringpi ../devLib
-INCLUDEPATH += ../wiringpi
-INCLUDEPATH += ../devLib
-#QMAKE_CFLAGS	+= -Wall -Wextra -Winline -pipe
+DEPENDPATH += . ../sensor-libraries/bme280
+INCLUDEPATH += ../sensor-libraries/bme280
+QMAKE_CFLAGS	+= -Wall -Wextra -Winline -pipe
+LIBS += -L../build-sensor-libraries-Yumeng-Debug/bme280 -lbme280
+
+DEPENDPATH += . ../wiringpiqt/wiringPi ../wiringpiqt/devLib
+INCLUDEPATH += ../wiringpiqt/wiringPi ../wiringpiqt/devLib
+QMAKE_CFLAGS += -Wall -Wextra
+LIBS += \
+  -L../build-wiringpiqt-Yumeng-Debug/wiringPi \
+    -L../build-wiringpiqt-Yumeng-Debug/devLib \
+    -lwiringPi \
+    -lwiringPiDev  \
+    -lm -lpthread -lrt -lcrypt
 
 
 
@@ -21,13 +31,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    readdata.cpp \
-    softPwm.c \
-    wiringPi.c \
-    softTone.c \
-    piHiPri.c \
-    ../wiringPi/wiringPiI2C.c \
-    bme280.cpp
+    readdata.cpp
 
 RESOURCES += qml.qrc
 
@@ -43,9 +47,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    readdata.h\
-    ../wiringpi/wiringpi.h \
-    ../wiringpi/softPwm.h \
-    ../wiringpi/softTone.h \
-    ../wiringPi/wiringPiI2C.h \
-    bme280.h
+    readdata.h
+
