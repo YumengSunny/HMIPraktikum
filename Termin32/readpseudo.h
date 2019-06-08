@@ -4,7 +4,7 @@
 #include "datamodel.h"
 #include "basesensor.h"
 
-class readpseudo:public QObject,public BaseSensor
+class readpseudo:public BaseSensor
 {
     Q_OBJECT
 

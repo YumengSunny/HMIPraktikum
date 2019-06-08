@@ -6,7 +6,7 @@
 #include"basesensor.h"
 
 
-class ReadData:public QObject,public BaseSensor
+class ReadData:public BaseSensor
 {
      Q_OBJECT
 

@@ -1,5 +1,12 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
+        <file>sensor.qml</file>
+        <file>../Termin32/BaseChart.qml</file>
+        <file>../Termin32/Combo.qml</file>
+        <file>../Termin32/main.qml</file>
+        <file>../Termin32/Page1Form.ui.qml</file>
+        <file>../Termin32/Page2Form.ui.qml</file>
+        <file>../Termin32/qtquickcontrols2.conf</file>
+        <file>../Termin32/Table.qml</file>
     </qresource>
 </RCC>

@@ -1,12 +1,13 @@
 #ifndef BASESENSOR_H
 #define BASESENSOR_H
+#include <QObject>
 
 
-class BaseSensor
+class BaseSensor : public QObject
 {
 
 public:
-    BaseSensor(){};
+    BaseSensor(){}
     virtual ~BaseSensor(){}
     virtual void ShowData()=0;
     virtual void updateData()=0;

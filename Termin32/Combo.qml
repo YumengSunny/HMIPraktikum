@@ -16,6 +16,7 @@ import QtQuick.Controls 2.12
                 font: control.font
                 elide: Text.ElideRight
                 verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
             }
             highlighted: control.highlightedIndex === index
         }
@@ -32,6 +33,7 @@ import QtQuick.Controls 2.12
                 font: control.font
                 color: "purple"
                 verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
                 elide: Text.ElideRight
             }
 

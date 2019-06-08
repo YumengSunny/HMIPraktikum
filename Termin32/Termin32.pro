@@ -49,7 +49,8 @@ win32{
 #    readdata.cpp \
 #   readpseudo.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += qml.qrc \
+    imagine-assets.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

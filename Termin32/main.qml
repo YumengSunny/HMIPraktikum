@@ -310,21 +310,7 @@ ApplicationWindow {
                     Table1{
                         id:history
                         x: diagramfield.width;
-                        model: myModel
-                        anchors.fill: parent
-                        itemDelegate: Rectangle{
-                             //radius:8;
 
-                          color : styleData.selected ? "darkgray": "lightgray"
-                          Text {
-                              anchors.centerIn : parent
-                              color : "purple"
-                              text: styleData.value.toFixed(tableColor.sensorGenauArray[styleData.column])
-
-                              font.pixelSize: parent.height*0.4
-
-                           }
-                        }
                     }
 
                 }
@@ -345,7 +331,7 @@ ApplicationWindow {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: "Settings"
                 color: "purple"
-                font.family: "Courier"
+
                 font.bold: true
                 font.pixelSize: 30
 
